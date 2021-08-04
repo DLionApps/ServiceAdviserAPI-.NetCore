@@ -11,6 +11,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Serviceadvisor.Data;
+using Microsoft.Extensions.Options;
+using ServiceAdviserAPI_.NetCore.Services;
 
 namespace ServiceAdviserAPI_.NetCore
 {
@@ -26,6 +29,11 @@ namespace ServiceAdviserAPI_.NetCore
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // requires using Microsoft.Extensions.Options
+            services.Configure<DatabaseSettings>(Configuration.GetSection(nameof(DatabaseSettings)));
+
+            services.AddSingleton<DatabaseSettings>(sp => sp.GetRequiredService<IOptions<DatabaseSettings>>().Value);
+            services.AddSingleton<MaintenanceServiceService>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

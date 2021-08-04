@@ -11,7 +11,10 @@
 
   <ItemGroup>
     <Folder Include="Utility\" />
-    <Folder Include="Services\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Serviceadvisor.Data\Serviceadvisor.Data.csproj" />
   </ItemGroup>
 
 </Project>
