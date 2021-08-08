@@ -13,7 +13,7 @@ namespace ServiceAdviserAPI_.NetCore.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            return new JsonResult(new { messege = "Welcome to ServiceAdvisor API" });
+            return new JsonResult(new { messege = "Welcome to ServiceAdvisor API Test" });
         }
     }
 }
