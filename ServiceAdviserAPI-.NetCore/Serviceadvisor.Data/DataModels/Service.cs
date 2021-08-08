@@ -3,6 +3,7 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace Serviceadvisor.Data.DataModels
 {
+    [BsonIgnoreExtraElements]
     public class Service
     {
         [BsonId]

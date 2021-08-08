@@ -20,7 +20,8 @@ namespace ServiceAdviserAPI_.NetCore.Controllers
         [HttpGet]
         public ActionResult<List<Service>> Get() 
         {
-            return _maintenanceServiceService.Get();
+           var services = _maintenanceServiceService.Get();
+            return services;
         }
             
     }
